@@ -59,17 +59,16 @@ namespace user_changers_sns_trigger
                 var snsClient = new AmazonSimpleNotificationServiceClient(Amazon.RegionEndpoint.SAEast1);
                 var request = new PublishRequest
                 {
-                    TopicArn = "arn:aws:sns:sa-east-1:240579036019:user-changes-topic-2",
+                    TopicArn = Acceess.GetTopiARN(),
                     Message = JsonSerializer.Serialize(titulo),
                     Subject = $"ENVIO TITUTLOS MARCUS {DateTime.Now.ToString()}"
                 };
                 await snsClient.PublishAsync(request);
                 context.Logger.LogLine($"ENVIANDO PARA A SEGUNDA FILA user-changes-topic-2");
-
             }
             catch (Exception ex)
             {
-                context.Logger.LogLine($"ERRO NO ENVIO PARA SEGUNDA FILA user-changes-topic-2 { ex.Message }");
+                context.Logger.LogLine($"ERRO NO ENVIO PARA SEGUNDA FILA ARN = { Acceess.GetTopiARN() }  user-changes-topic-2 { ex.Message }");
             }
         }
 
