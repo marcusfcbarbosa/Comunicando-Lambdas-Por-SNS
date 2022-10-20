@@ -42,7 +42,14 @@ namespace user_changers_sns_trigger
             try
             {
                 context.Logger.LogLine($"1- PROCESSAMENTO DE REGISTROS {record.Sns.Subject} - {record.Sns.Message}");
-                var titulo = JsonSerializer.Deserialize<EnvioTitulo>(record.Sns.Message);
+                //var titulo = JsonSerializer.Deserialize<EnvioTitulo>(record.Sns.Message);
+                var titulo = new EnvioTitulo()
+                {
+                    codEspecieDoc = "1233213",
+                    dataVencimento = DateTime.Now.AddDays(2),
+                    idLinha = "233",
+                    seuNumero = "3333"
+                };
                 context.Logger.LogLine($"2- TITULO DESERIALIZADO {titulo.idLinha} - {titulo.codEspecieDoc} - {titulo.dataVencimento}");
                 var retorno = await _mediator.Send(new EnviarTituloCommand
                 {

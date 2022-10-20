@@ -7,16 +7,14 @@ namespace user_changes_domain
 {
     public static class Acceess
     {
+        public static string GetConnectionStrings() => GetSeetings().GetValue<string>("ConnectionStrings");
         public static string GetRoute() => GetSeetings().GetValue<string>("Queue");
-
         public static string GetTopiARN() => GetSeetings().GetValue<string>("SNS_ARN");
-
         public static IConfigurationRoot GetSeetings() => new ConfigurationBuilder()
                .SetBasePath(Directory.GetCurrentDirectory())
                .AddJsonFile("appsetttings.json")
                .AddEnvironmentVariables()
                .Build();
-
         public static AmazonSQSClient GetCredentials()
         {
             var accessKey = GetSeetings().GetValue<string>("AccessKey");

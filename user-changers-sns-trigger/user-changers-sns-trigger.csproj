@@ -13,6 +13,10 @@
     <PackageReference Include="AWSSDK.SimpleNotificationService" Version="3.7.4.23" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+	<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.4">
+		<PrivateAssets>all</PrivateAssets>
+		<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+	</PackageReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\user-changes-domain\user-changes-domain.csproj" />

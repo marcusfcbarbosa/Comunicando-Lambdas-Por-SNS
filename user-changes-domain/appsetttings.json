@@ -1,6 +1,7 @@
 {
-  "AccessKey": "AKIATQA5AYNZXQDB67CD",
-  "Secret": "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",
+  "AccessKey": "AKIATQA5AYNZRQUGVUPJ",
+  "Secret": "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",
   "Queue": "https://sqs.sa-east-1.amazonaws.com/240579036019/TesteEnvioFila",
-  "SNS_ARN": "arn:aws:sns:sa-east-1:240579036019:user-changes-topic-2"
+  "SNS_ARN": "arn:aws:sns:sa-east-1:240579036019:user-changes-topic-2",
+  "ConnectionStrings": "Server=localhost\\SQLEXPRESS;Database=FibraDB;Trusted_Connection=True;"
 }
